@@ -8,6 +8,13 @@ services:
     depends_on:
       - db
 
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
   db:
     image: mongo
     restart: always
